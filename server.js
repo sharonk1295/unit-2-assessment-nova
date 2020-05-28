@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
 const show = console.log
-const port = 3000;
 const todosController = require('./controllers/todos.js');
+const PORT = process.env.PORT || 3000;
 
 // ====== IMPORT DATA ====== //
 const todos = require('./models/todos.js');
@@ -21,7 +21,7 @@ app.use('/', todosController);
 
 
 // ====== LISTENER ====== //
-app.listen(port, () => {
-    show(`listening on port ${port}`);
+app.listen(PORT, () => {
+    show(`listening on port ${PORT}`);
 })
 
